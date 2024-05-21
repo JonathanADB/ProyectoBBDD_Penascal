@@ -10,6 +10,12 @@ async def read_courses(skip: int = 0, limit: int = 10, db: Session = Depends(dep
     courses = crud.get_courses(db, skip=skip, limit=limit)
     return courses
 
-@router.post("/enroll/", response_model=schemas.Enrollment)
-async def enroll_student(enrollment: schemas.Enrollment, db: Session = Depends(dependencies.get_db)):
-    return crud.enroll_student(db, student_id=enrollment.student_id, course_id=enrollment.course_id)
+@router.get("/students/", response_model=List[schemas.Student])
+async def read_students(skip: int = 0, limit: int = 10, db: Session = Depends(dependencies.get_db)):
+    students = crud.get_students(db, skip=skip, limit=limit)
+    return students
+
+@router.get("/professors/", response_model=List[schemas.Professor])
+async def read_professors(skip: int = 0, limit: int = 10, db: Session = Depends(dependencies.get_db)):
+    professors = crud.get_professors(db, skip=skip, limit=limit)
+    return professors
