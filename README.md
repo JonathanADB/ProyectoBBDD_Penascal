@@ -19,5 +19,8 @@ mysql-connector-python
 jinja2
 3. pip install -r requirements.txt
 
+### Arrancar servidor
+4.uvicorn app.main:app --reload
+
 
 
