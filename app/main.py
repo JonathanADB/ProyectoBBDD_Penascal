@@ -1,12 +1,11 @@
-# app/main.py
 from fastapi import FastAPI, Request, Depends
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
-from .routers import courses, admin
-from .db import engine, Base
-from .dependencies import get_db
-from . import crud
+from app.routers import courses, admin
+from app.db import engine, Base
+from app.dependencies import get_db
+from app import crud
 
 app = FastAPI()
 
