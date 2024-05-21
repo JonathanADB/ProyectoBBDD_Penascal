@@ -5,20 +5,20 @@ from .db import Base
 class Student(Base):
     __tablename__ = "students"
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    email = Column(String, unique=True, index=True)
+    name = Column(String(50), index=True)  # Especifica la longitud máxima como 50 caracteres
+    email = Column(String(100), unique=True, index=True)  # Por ejemplo, 100 caracteres
 
 class Professor(Base):
     __tablename__ = "professors"
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    email = Column(String, unique=True, index=True)
+    name = Column(String(50), index=True)  # Por ejemplo, 50 caracteres
+    email = Column(String(100), unique=True, index=True)  # Por ejemplo, 100 caracteres
 
 class Course(Base):
     __tablename__ = "courses"
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, index=True)
-    description = Column(String, index=True)
+    title = Column(String(100), index=True)  # Por ejemplo, 100 caracteres
+    description = Column(String(255), index=True)  # Por ejemplo, 255 caracteres
     professor_id = Column(Integer, ForeignKey('professors.id'))
     professor = relationship("Professor")
 
