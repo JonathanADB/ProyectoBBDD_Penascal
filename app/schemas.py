@@ -12,7 +12,7 @@ class Student(StudentBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class ProfessorBase(BaseModel):
     name: str
@@ -25,7 +25,7 @@ class Professor(ProfessorBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class CourseBase(BaseModel):
     title: str
@@ -35,16 +35,27 @@ class CourseBase(BaseModel):
 class CourseCreate(CourseBase):
     pass
 
+class CourseUpdate(CourseBase):
+    pass
+
 class Course(CourseBase):
     id: int
     professor: Optional[Professor]
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class Enrollment(BaseModel):
     student_id: int
     course_id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+
+class CourseUpdate(CourseBase):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    professor_id: Optional[int] = None
+
+    class Config:
+        from_attributes = True
