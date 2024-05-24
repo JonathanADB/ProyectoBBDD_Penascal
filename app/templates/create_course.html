@@ -1,16 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}Create Course{% endblock %}
+{% block title %}Crear Curso{% endblock %}
 
 {% block content %}
-<h2>Create a new Course</h2>
-<form action="/admin/create_course" method="post">
-	<label for="title">Title:</label>
-	<input type="text" id="title" name="title"><br><br>
-	<label for="description">Description:</label>
-	<input type="text" id="description" name="description"><br><br>
-	<label for="professor_id">Professor ID:</label>
-	<input type="number" id="professor_id" name="professor_id"><br><br>
-	<input type="submit" value="Create Course">
-</form>
+<div class="min-h-screen bg-gray-100 flex flex-col justify-center">
+    <div class="max-w-md w-full mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-900">Crear un nuevo Curso</h2>
+        <form action="/admin/create_course" method="post" class="bg-white p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
+            <div>
+                <label for="title" class="text-sm font-bold text-gray-600 block">Título:</label>
+                <input type="text" id="title" name="title" class="w-full p-2 border border-gray-300 rounded mt-1">
+            </div>
+            <div>
+                <label for="description" class="text-sm font-bold text-gray-600 block">Descripción:</label>
+                <input type="text" id="description" name="description" class="w-full p-2 border border-gray-300 rounded mt-1">
+            </div>
+            <div>
+                <label for="professor_id" class="text-sm font-bold text-gray-600 block">ID del Profesor:</label>
+                <input type="number" id="professor_id" name="professor_id" class="w-full p-2 border border-gray-300 rounded mt-1">
+            </div>
+            <div>
+                <input type="submit" value="Crear Curso" class="w-full px-4 py-2 text-lg text-white bg-blue-500 hover:bg-blue-700 rounded-md focus:outline-none focus:bg-blue-700">
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
