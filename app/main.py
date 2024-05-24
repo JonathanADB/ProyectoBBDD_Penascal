@@ -29,3 +29,11 @@ async def admin_panel(request: Request):
 @app.get("/admin/create_course", response_class=HTMLResponse)
 async def create_course_form(request: Request):
     return templates.TemplateResponse("create_course.html", {"request": request})
+
+@app.get("/admin/create_professor", response_class=HTMLResponse)
+async def create_professor_form(request: Request):
+    return templates.TemplateResponse("create_professor.html", {"request": request})
+
+@app.get("/admin/create_student", response_class=HTMLResponse)
+async def create_student_form(request: Request):
+    return templates.TemplateResponse("create_student.html", {"request": request})

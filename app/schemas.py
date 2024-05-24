@@ -8,6 +8,9 @@ class StudentBase(BaseModel):
 class StudentCreate(StudentBase):
     pass
 
+class StudentUpdate(StudentBase):
+    pass
+
 class Student(StudentBase):
     id: int
 
@@ -19,6 +22,9 @@ class ProfessorBase(BaseModel):
     email: str
 
 class ProfessorCreate(ProfessorBase):
+    pass
+
+class ProfessorUpdate(ProfessorBase):
     pass
 
 class Professor(ProfessorBase):
@@ -33,6 +39,9 @@ class CourseBase(BaseModel):
     professor_id: Optional[int] = None
 
 class CourseCreate(CourseBase):
+    pass
+
+class CourseUpdate(CourseBase):
     pass
 
 class Course(CourseBase):

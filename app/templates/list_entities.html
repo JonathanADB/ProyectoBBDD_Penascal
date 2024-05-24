@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}List of {{ entity_type }}{% endblock %}
+
+{% block content %}
+<h2>{{ entity_type }}</h2>
+<ul>
+    {% for entity in entities %}
+    <li>{{ entity.name }} ({{ entity.email }})</li>
+    {% if entity_type == "Courses" %}
+        <ul>
+            <li>Title: {{ entity.title }}</li>
+            <li>Description: {{ entity.description }}</li>
+            <li>Professor ID: {{ entity.professor_id }}</li>
+        </ul>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endblock %}

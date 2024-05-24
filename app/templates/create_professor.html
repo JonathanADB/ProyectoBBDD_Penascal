@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Create Professor{% endblock %}
+
+{% block content %}
+<h2>Create a new Professor</h2>
+<form action="/admin/create_professor" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br><br>
+    <input type="submit" value="Create Professor">
+</form>
+{% endblock %}

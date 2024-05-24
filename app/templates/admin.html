@@ -4,5 +4,35 @@
 
 {% block content %}
 <h2>Admin Panel</h2>
-<a href="/admin/create_course">Create Course</a>
+<table border="1">
+  <tr>
+    <th></th>
+    <th>Read</th>
+    <th>Create</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  <tr>
+    <td>Courses</td>
+    <td><a href="/admin/list_courses">Read</a></td>
+    <td><a href="/admin/create_course">Create</a></td>
+    <td>Update</td>
+    <td>Delete</td>
+  </tr>
+  <tr>
+    <td>Professors</td>
+    <td><a href="/admin/list_professors">Read</a></td>
+    <td><a href="/admin/create_professor">Create</a></td>
+    <td>Update</td>
+    <td>Delete</td>
+  </tr>
+  <tr>
+    <td>Students</td>
+    <td><a href="/admin/list_students">Read</a></td>
+    <td><a href="/admin/create_student">Create</a></td>
+    <td>Update</td>
+    <td>Delete</td>
+  </tr>
+</table>
 {% endblock %}
+
