@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Actualizar Estudiante{% endblock %}
+
+{% block content %}
+<div style="min-height: 100vh; background-color: #f3f4f6; display: flex; flex-direction: column; justify-content: center;">
+    <div style="max-width: 28rem; width: 100%; margin: auto;">
+        <h2 style="font-size: 2rem; font-weight: bold; text-align: center; color: #1f2937;">Actualizar Estudiante</h2>
+        <form action="/admin/update_student/{{ student.id }}" method="post" style="background-color: white; padding: 2rem; margin-top: 1.5rem; margin-bottom: 0; space-y: 1rem; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+            <div>
+                <label for="name" style="font-size: 0.875rem; font-weight: bold; color: #4b5563; display: block;">Nombre:</label>
+                <input type="text" id="name" name="name" value="{{ student.name }}" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem; margin-top: 0.25rem;">
+            </div>
+            <div>
+                <label for="email" style="font-size: 0.875rem; font-weight: bold; color: #4b5563; display: block;">Correo Electrónico:</label>
+                <input type="text" id="email" name="email" value="{{ student.email }}" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem; margin-top: 0.25rem;">
+            </div>
+            <div>
+                <input type="submit" value="Actualizar Estudiante" style="width: 100%; padding: 0.5rem 1rem; font-size: 1.125rem; color: white; background-color: #3b82f6; border-radius: 0.375rem; cursor: pointer; border: none; outline: none;">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

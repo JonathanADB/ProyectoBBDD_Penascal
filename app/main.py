@@ -22,10 +22,11 @@ async def read_root(request: Request, db: Session = Depends(get_db)):
     courses = crud.get_courses(db)
     return templates.TemplateResponse("index.html", {"request": request, "courses": courses})
 
+#Admin
 @app.get("/admin", response_class=HTMLResponse)
 async def admin_panel(request: Request):
     return templates.TemplateResponse("admin.html", {"request": request})
-
+#Create
 @app.get("/admin/create_course", response_class=HTMLResponse)
 async def create_course_form(request: Request):
     return templates.TemplateResponse("create_course.html", {"request": request})
@@ -37,3 +38,16 @@ async def create_professor_form(request: Request):
 @app.get("/admin/create_student", response_class=HTMLResponse)
 async def create_student_form(request: Request):
     return templates.TemplateResponse("create_student.html", {"request": request})
+
+#Update
+@app.get("/admin/update_course", response_class=HTMLResponse)
+async def update_course_form(request: Request):
+    return templates.TemplateResponse("update_entity.html", {"request": request})
+
+@app.get("/admin/update_professor", response_class=HTMLResponse)
+async def update_professor_form(request: Request):
+    return templates.TemplateResponse("update_entity.html", {"request": request})
+
+@app.get("/admin/update_student", response_class=HTMLResponse)
+async def update_student_form(request: Request):
+    return templates.TemplateResponse("update_entity.html", {"request": request})

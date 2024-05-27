@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>{% block title %}Study System{% endblock %}</title>
-	<link href="app/static/output.css" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <title>{% block title %}Base de Datos Para Escuela{% endblock %}</title>
 </head>
 <body>
-	<header class="bg-gray-200 p-4">
-		<h1 class="text-3xl text-blue-500">Study System</h1>
-		<nav class="mt-4">
-			<a href="/" class="mr-4 text-blue-500">Home</a>
-			<a href="/admin" class="text-blue-500">Admin</a>
-		</nav>
-	</header>
-	
-	<main class="max-w-2xl mx-auto my-8">
-		{% block content %}
-		
-		{% endblock %}
-	</main>
+    <header style="background-color: #edf2f7; padding: 1rem;">
+        <h1 style="font-size: 1.875rem; color: #3b82f6;">Base de Datos Para Escuela</h1>
+        <nav style="margin-top: 1rem;">
+            <a href="/" style="margin-right: 1rem; color: #3b82f6;">Home</a>
+            <a href="/admin" style="color: #3b82f6;">Admin</a>
+        </nav>
+    </header>
+    
+    <main style="max-width: 32rem; margin: 2rem auto;">
+        {% block content %}
+        
+        {% endblock %}
+    </main>
 </body>
 </html>
